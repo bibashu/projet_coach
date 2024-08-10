@@ -1,13 +1,12 @@
 import {
   Apple,
   Laptop,
-  Palette,
+
   PaletteFill,
   Wordpress,
 } from "react-bootstrap-icons";
 import { Card } from "../../components/Card/Card";
-import Header from "../../components/Header/Header";
-import s from "./Home.module.css";
+
 import { CardProgress } from "../../components/CardProgress/CardProgress";
 import html from "../../assets/imgs/html.svg"
 import css from "../../assets/imgs/css.svg"
