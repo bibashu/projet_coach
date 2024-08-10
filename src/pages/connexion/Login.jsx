@@ -3,15 +3,26 @@ import { InputUser } from "../../components/InputUser/InputUser";
 import s from "./style.module.css";
 import { Google, TwitterX, Meta } from "react-bootstrap-icons";
 import Swal from 'sweetalert2';
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { auth, provider } from "../../Firebase";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    // Check if user is already logged in
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/home");
+      }
+    });
+    
+    return () => unsubscribe(); // Cleanup subscription on unmount
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +31,6 @@ export default function Login() {
       await signInWithEmailAndPassword(auth, email, password);
       Swal.fire({
         title: "Connexion réussie!",
-        // text: "Nous allons vous rediriger vers la page d'accueil",
         icon: "success"
       });
       setTimeout(() => {
