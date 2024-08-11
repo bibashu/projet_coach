@@ -113,10 +113,10 @@ export function Register(props) {
               Register
             </Button>
             <p className="text-sm mb-3 mt-4">
-              Vous avez pas de compte{" "}
-              <a className="text-blue-700" href="/login">
-                Sign up
-              </a>{" "}
+              Vous avez pas de compte
+              <a className="text-blue-700" href="/">
+                Sign in
+              </a>
             </p>
           </form>
         </div>
