@@ -1,6 +1,6 @@
 import { InputUser } from "../../components/InputUser/InputUser";
 import s from "./style.module.css";
-import { Google, TwitterX, Meta, Dash } from "react-bootstrap-icons";
+import { Google, TwitterX, Meta, Dash, Link } from "react-bootstrap-icons";
 import { auth, provider } from "../../Firebase";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
@@ -68,7 +68,7 @@ export function Register(props) {
           <h1 className="text-7xl font-bold text-black">Hi there!</h1>
           <h6 className="text-md mb-4">Welcome to Haze community Dashboard</h6>
           <button className=" flex border-2 border-gray-400 w--full justify-center p-2 justify-items-center">
-            <img src={google} alt="" className="h-6 w-6" />
+            <img src={google} alt="" className="h-5 w-6" />
             <p className="text-sm ml-2" >Log with Gmail</p>
           </button>
           <p className="my-3"> Or</p>
@@ -103,7 +103,7 @@ export function Register(props) {
               </label>
             </div>
             <Button className="bg-black w-full text-white rounded-2xl mt-5 shadow py-2">Register</Button>
-            <p className="text-sm">Vous avez pas de compte <a href="/login">Sign up</a> </p>
+            <p className="text-sm mb-3 mt-4">Vous avez pas de compte <a className="text-blue-700" href="/login">Sign up</a> </p>
           </form>
         </div>
         <div className="shadow-sm w-1-2 md:w-full ">
