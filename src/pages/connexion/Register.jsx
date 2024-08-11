@@ -27,7 +27,7 @@ export function Register(props) {
       });
 
       setTimeout(() => {
-        navigate("/login");
+        navigate("/home");
       }, 2000);
     } catch (error) {
       Swal.fire({
