@@ -1,0 +1,41 @@
+/* sidebar.css */
+.sidebar-hidden {
+    @apply fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full;
+  }
+  
+  .sidebar-visible {
+    @apply fixed top-0 left-0 z-40 w-64 h-screen transition-transform translate-x-0;
+  }
+  
+  .sidebar-button {
+    @apply inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+  }
+  
+  .sidebar-button-icon {
+    @apply w-6 h-6;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center p-2 text-black rounded-lg hover:bg-orange-500 group;
+  }
+  
+  .sidebar-icon {
+    @apply w-16 h-6;
+  }
+  
+  .sidebar-header {
+    @apply flex items-center ps-2.5 mb-5;
+  }
+  
+  .sidebar-logo {
+    @apply w-10 h-10 p-0 rounded-full ring-2 ring-gray-300 dark:ring-gray-500;
+  }
+  
+  .sidebar-title {
+    @apply self-center text-xl pl-2 font-semibold whitespace-nowrap text-black;
+  }
+  
+  .sidebar-divider {
+    @apply w-48 h-1 mx-auto my-4 bg-orange-500 border-0 rounded md:my-10;
+  }
+  
